@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum Vitae - WhatsApp Style</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e5ddd5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #25D366; /* Color verde de WhatsApp */
+        }
+
+        .contact {
+            display: flex;
+            align-items: center;
+            border: 1px solid #25D366;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+            background-color: #f9f9f9;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .chat {
+            display: none;
+            border: 1px solid #25D366;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            margin-top: 10px;
+        }
+
+        .chat p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Currículum Vitae</h1>
+
+        <div class="contact" onclick="toggleChat('personalChat')">
+            <div class="contact-icon">P</div>
+            <div>Datos Personales</div>
+        </div>
+        <div class="chat" id="personalChat">
+            <p>Nombre: Juan Pérez</p>
+            <p>Teléfono: +34 612 345 678</p>
+            <p>Email: juan.perez@email.com</p>
+        </div>
+
+        <div class="contact" onclick="toggleChat('experienceChat')">
+            <div class="contact-icon">E</div>
+            <div>Experiencia</div>
+        </div>
+        <div class="chat" id="experienceChat">
+            <p>Desarrollador Web en Empresa XYZ (2020 - Presente)</p>
+            <p>Asistente de Marketing en Empresa ABC (2018 - 2020)</p>
+        </div>
+
+        <div class="contact" onclick="toggleChat('educationChat')">
+            <div class="contact-icon">E</div>
+            <div>Educación</div>
+        </div>
+        <div class="chat" id="educationChat">
+            <p>Grado en Informática - Universidad de Madrid (2014 - 2018)</p>
+            <p>Máster en Desarrollo Web - Universidad de Barcelona (2019)</p>
+        </div>
+
+        <div class="contact" onclick="toggleChat('skillsChat')">
+            <div class="contact-icon">H</div>
+            <div>Habilidades</div>
+        </div>
+        <div class="chat" id="skillsChat">
+            <p>HTML, CSS, JavaScript</p>
+            <p>React, Node.js</p>
+            <p>Trabajo en equipo, Comunicación efectiva</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat(chatId) {
+            const chat = document.getElementById(chatId);
+            chat.style.display = chat.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e5ddd5;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+header {
+    display:flex;
+    align-content: space-around;
+    
+    .titulo {
+        width: 100%;
+        h1 {
+            text-align: left;
+        }
+    }
+
+}
+
+header .logo {
+    font-size: 50px;
+    position: relative;
+}
+
+header .logo:hover {
+    color: #ff0000; /* Cambia a un color de advertencia */
+    animation: shake 0.5s ease-in-out infinite alternate; /* Efecto de sacudida */
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-5px); }
+    100% { transform: translateX(5px); }
+}
+
+footer {
+    background-color: #333; /* Color de fondo del footer */
+    padding: 20px; /* Espaciado alrededor del contenido */
+    text-align: center; /* Centra el texto horizontalmente */
+    color: #fff; /* Color de texto */
+}
+
+footer p {
+    display: flex; /* Activa Flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    margin: 0; /* Elimina el margen predeterminado */
+    font-size: 16px; /* Tamaño de la fuente */
+}
+
+footer img {
+    width: 24px; /* Ajusta el tamaño de la imagen */
+    height: 24px;
+    margin-left: 8px; /* Espacio entre el texto y la imagen */
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+
+
+
+
+h1 {
+    text-align: center;
+    color: #25D366; /* Color verde de WhatsApp */
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    border: 1px solid #25D366;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.ficha {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    .logo {
+       
+
+        text-align : center;
+        img {
+            border-radius: 50%;
+            width: 150px;
+            text-align: center;
+        }
+    }
+}
+
+.otraInfo {
+    border : 1px solid #ccc;
+}
+
+.chat {
+    display: none;
+    border: 1px solid #25D366;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    margin-top: 10px;
+}
+
+.message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    position: relative;
+    max-width: 90%;
+    
+}
+
+.message::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 10px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #ffffff transparent;
+}
+
+.message.experience, .message.education {
+    /*background-color: #d4edda;  Color verde claro para experiencia */
+    display : flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-around;
+    width: 100%;
+   
+}
+.messageIntervalo {
+    text-align : center;
+    
+}
+.messageLogo {
+    width : 40px;
+    
+}
+
+.messageCuerpo {
+    display:flex
+}
+
+.messageBody {
+    background-color: #d4edda;
+    border-radius : 15px;
+    padding : 5px 15px; 
+    max-width: 80%;
+}
+
+.messageOtros {
+    padding: 10px;
+    
+}
+
+.messageLogo  img {
+    width: 30px;
+    height :30px;
+    border-radius: 15px;
+    border : 1px solid black;
+}
+
+.otraInfo {
+    display: flex;
+    flex-wrap: nowrap; /* Evita que los divs se envuelvan a una nueva línea */
+    justify-content: center; /* Centra los divs en el contenedor */
+    align-items: center; /* Alinea verticalmente el contenido si es necesario */
+    width: max-content; /* Ajusta el ancho al contenido total */
+    margin: 0 auto; /* Centra el contenedor horizontalmente en la capa superior */
+    div {
+        width: 50px;
+        height: 50px; /* Asegura una altura uniforme para cada div */
+        display: flex;
+        justify-content: center; /* Centra horizontalmente el icono */
+        align-items: center; /* Centra verticalmente el icono */
+        i {
+            font-size: 24px;
+            color : #25D366;
+        }
+    }
+}
+
+.messageIntervalo {
+  
+    .Ocupado {
+        border : 1px solid #25D366;
+        border-radius : 15px;
+    }
+
+    .Fin {
+        border : 1px solid red;
+        border-radius : 15px;
+
+
+    }
+}
+
+.skills-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px; /* Ajusta el ancho según prefieras */
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.skill-item img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+.skill-item span {
+    font-size: 14px;
+    color: #333;
+}
+
+
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}

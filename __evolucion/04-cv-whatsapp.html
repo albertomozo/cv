@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum Vitae - WhatsApp Style</title>
+    <link rel="stylesheet" href="assets/css/04-estilos.css">
+    <script src="https://kit.fontawesome.com/e25f45c29f.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="assets/img/alberto.png"/>
+            </div>
+            <div class="titulo">
+                <h1>Currículum Vitae</h1>
+        </div>
+        </header>
+        <div class="contact" onclick="toggleChat('personalChat')">
+            <div class="contact-icon">   <i class="fa-solid fa-user"></i></div>
+         
+            <div>Datos Personales <i class="fa-solid fa-user"></i></div>
+        </div>
+        <div class="chat" id="personalChat">
+            <p>Nombre: Juan Pérez</p>
+            <p>Teléfono: +34 612 345 678</p>
+            <p>Email: juan.perez@email.com</p>
+        </div>
+
+        <div class="contact" onclick="toggleChat('experienceChat')">
+            <div class="contact-icon"><i class="fa-solid fa-briefcase"></i></div>
+            
+            <div>Experiencia</div>
+        </div>
+        <div class="chat" id="experienceChat">
+            
+        </div>
+
+        <div class="contact" onclick="toggleChat('educationChat')">
+            <div class="contact-icon"><i class="fa-solid fa-book"></i></div>
+            <div>Formación</div>
+        </div>
+        <div class="chat" id="educationChat">
+            <div class="message education">
+                Grado en Informática - Universidad de Madrid <br>
+                <small>(2014 - 2018)</small>
+            </div>
+            <div class="message education">
+                Máster en Desarrollo Web - Universidad de Barcelona <br>
+                <small>(2019)</small>
+            </div>
+        </div>
+        <div class="contact" onclick="toggleChat('educationChat')">
+            <div class="contact-icon"><i class="fa-solid fa-gear"></i></i></div>
+            <div>Habilidades</div>
+        </div>
+        <div class="chat" id="skillsChat">
+            <div class="message skill">
+                Grado en Informática - Universidad de Madrid <br>
+                <small>(2014 - 2018)</small>
+            </div>
+            <div class="message skill">
+                Máster en Desarrollo Web - Universidad de Barcelona <br>
+                <small>(2019)</small>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+    function toggleChat(chatId) {
+        var chat = document.getElementById(chatId);
+        if (chat.style.display === "none" || chat.style.display === "") {
+            chat.style.display = "block";
+        } else {
+            chat.style.display = "none";
+        }
+    }
+</script>
+<script src="assets/js/datos.js"></script>
+<script src="assets/js/04-contacto.js"></script>
+<script src="assets/js/04-experiencia.js"></script>
+<script src="assets/js/04-formacion.js"></script>
+</body>
+</html>

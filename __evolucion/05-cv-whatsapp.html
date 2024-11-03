@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum Vitae - WhatsApp Style</title>
+    <link rel="stylesheet" href="assets/css/05-estilos.css">
+    <script src="https://kit.fontawesome.com/e25f45c29f.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="titulo">
+                <h1>CurrículumVitae</h1>
+            </div>
+            <div class="logo">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+      
+        </header>
+        <div class="contact" onclick="toggleChat('personalChat')">
+            <div class="contact-icon"><i class="fa-solid fa-user"></i></div>
+         
+            <div>Datos Personales </div>
+        </div>
+        <div class="chat" id="personalChat">
+         </div>
+
+        <div class="contact" onclick="toggleChat('experienceChat')">
+            <div class="contact-icon"><i class="fa-solid fa-briefcase"></i></div>
+            
+            <div>Experiencia</div>
+        </div>
+        <div class="chat" id="experienceChat">
+            
+        </div>
+
+        <div class="contact" onclick="toggleChat('educationChat')">
+            <div class="contact-icon"><i class="fa-solid fa-book"></i></div>
+            <div>Formación</div>
+        </div>
+        <div class="chat" id="educationChat">
+           
+        </div>
+        <div class="contact" onclick="toggleChat('skillsChat')">
+            <div class="contact-icon"><i class="fa-solid fa-gear"></i></i></div>
+            <div>Habilidades</div>
+        </div>
+        <div class="chat" id="skillsChat">
+           
+        </div>
+        <footer>
+            <p>&copy; Alberto Mozo 2024 <img src="assets/img/alberto.png"/></p>
+        </footer>
+    </div>
+
+
+<script>
+     
+</script>
+<script src="assets/js/datos.js"></script>
+<script src="assets/js/05-funciones.js"></script>
+<script src="assets/js/05-contacto.js"></script>
+<script src="assets/js/05-experiencia.js"></script>
+<script src="assets/js/05-formacion.js"></script>
+</body>
+</html>
