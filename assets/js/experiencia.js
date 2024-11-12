@@ -69,7 +69,11 @@ experiencia.forEach(exp =>{
                 // Añadir el mensaje al contenedor de mensajes
                 document.getElementById("experienceChat").appendChild(messageDiv);
         
-
+                // ficha
+                let ficha = '<h2>Experiencia</h2>';
+                
+                ficha += `<p><strong>${experiencia[0].roles[0].startDate} - ${experiencia[0].roles[0]?.name}</strong> ${experiencia[0].organization.name} </p>`;
+                document.getElementById('experienciaItem').innerHTML = ficha;
 
 
 
