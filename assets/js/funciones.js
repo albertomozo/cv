@@ -1,4 +1,5 @@
 function toggleChat(chatId) {
+    document.querySelector('.chat').style.display = 'none'; // cierro todos los .chat
     var chat = document.getElementById(chatId);
     if (chat.style.display === "none" || chat.style.display === "") {
         chat.style.display = "block";
@@ -51,3 +52,56 @@ function mensaje(tipo, imgsrc, nombre,descripcion,fechaInicial,fechaFin){
 
 
 }
+
+/* Diccionario de iconos con Simple Icons */
+const obtenerIcono = (nombre) => {
+    // URL para Simple Icons, ajusta el color (opcionalmente) después de 'nombre'
+    const urlIcono = `https://cdn.simpleicons.org/${nombre}/000000`; // color en hexadecimal
+    const iconoPorDefecto = '<i class="fa-solid fa-question-circle"></i>'; // icono de fallback
+    let icon = iconoPorDefecto;
+    console.log('icono  ' + urlIcono);
+
+    // Crea una imagen para verificar si el icono existe
+    const img = new Image();
+    img.src = urlIcono;
+    img.onerror = () => {
+        // Si el icono no existe, muestra el icono por defecto
+        //document.getElementById("icon-container").innerHTML = iconoPorDefecto;
+        icon = iconoPorDefecto;
+    };
+    img.onload = () => {
+        // Si el icono existe, úsalo
+        //document.getElementById("icon-container").innerHTML = 
+        icon = `<img src="${urlIcono}" alt="${nombre} icon">`;
+    };
+
+    
+
+    return icon;
+};
+
+const obtenerIcon = async (nombre) => {
+    const urlIcono = `https://cdn.simpleicons.org/${nombre}/25D366`; // color en hexadecimal
+    const iconoPorDefecto = '<i class="fa-solid fa-question-circle"></i>'; // icono de fallback
+    let icon = iconoPorDefecto;
+    //const contenedorIcono = document.getElementById("icon-container");
+
+    try {
+        // Intentar cargar el icono
+        const respuesta = await fetch(urlIcono);
+        if (!respuesta.ok) {
+            // Si la respuesta no es 200, usa el icono por defecto
+            //contenedorIcono.innerHTML = iconoPorDefecto;
+            icon = iconoPorDefecto;
+        } else {
+            // Si el icono existe, agrégalo al contenedor
+            //contenedorIcono.innerHTML = `<img src="${urlIcono}" alt="${nombre} icon">`;
+            icon = `<img src="${urlIcono}" alt="${nombre} icon">`;
+        }
+    } catch (error) {
+        // En caso de cualquier error de red, muestra el icono por defecto
+       // contenedorIcono.innerHTML = iconoPorDefecto;
+       icon = iconoPorDefecto;
+    }
+    return icon;
+};

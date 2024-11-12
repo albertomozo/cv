@@ -27,15 +27,24 @@ header {
 
 }
 
-header .logo {
+header .barra-tools {
     font-size: 50px;
     position: relative;
 }
 
-header .logo:hover {
+header .barra-tools:hover {
     color: #ff0000; /* Cambia a un color de advertencia */
     animation: shake 0.5s ease-in-out infinite alternate; /* Efecto de sacudida */
 }
+
+.barra-tools {
+    display:flex;
+    gap: 10px;
+    i { width :50%;}
+}
+
+
+
 
 @keyframes shake {
     0% { transform: translateX(0); }
@@ -86,7 +95,7 @@ h1 {
     background-color: #f9f9f9;
 }
 
-.contact-icon {
+.contact-icon  {
     width: 50px;
     height: 50px;
     background-color: #25D366;
@@ -98,6 +107,13 @@ h1 {
     font-weight: bold;
     margin-right: 10px;
 }
+ #personalIcon
+ {
+    img{
+        width: 100%;
+        border-radius:50%;
+    }
+ }
 
 .ficha {
     
@@ -205,9 +221,13 @@ h1 {
         display: flex;
         justify-content: center; /* Centra horizontalmente el icono */
         align-items: center; /* Centra verticalmente el icono */
+        img {
+            width: 24px;
+            color : rgb(37, 211, 102);
+        }
         i {
             font-size: 24px;
-            color : #25D366;
+            color : rgb(37, 211, 102);
         }
     }
 }
@@ -215,13 +235,15 @@ h1 {
 .messageIntervalo {
   
     .Ocupado {
-        border : 1px solid #25D366;
+        /* border : 1px solid #25D366; */
         border-radius : 15px;
+        background-color: #ccc;
     }
 
     .Fin {
-        border : 1px solid red;
+       /*  border : 1px solid red; */
         border-radius : 15px;
+        background-color: antiquewhite;
 
 
     }
@@ -257,6 +279,10 @@ h1 {
 .skill-item span {
     font-size: 14px;
     color: #333;
+}
+
+.titular {
+    width : 80%;
 }
 
 

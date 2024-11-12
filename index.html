@@ -15,15 +15,19 @@
             <div class="titulo">
                 <h1>CurrículumVitae</h1>
             </div>
-            <div class="logo">
+            <div class="barra-tools">
+                <i class="fa-solid fa-magnifying-glass"></i>
                 <i class="fa-solid fa-bars"></i>
             </div>
       
         </header>
         <div class="contact" onclick="toggleChat('personalChat')">
-            <div class="contact-icon"><i class="fa-solid fa-user"></i></div>
-         
-            <div>Datos Personales </div>
+            <div class="contact-icon" id="personalIcon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="titular" id="personalItem">
+                
+            </div>
         </div>
         <div class="chat" id="personalChat">
          </div>
@@ -31,7 +35,9 @@
         <div class="contact" onclick="toggleChat('experienceChat')">
             <div class="contact-icon"><i class="fa-solid fa-briefcase"></i></div>
             
-            <div>Experiencia</div>
+            <div class="titular" id="experienciaItem">
+                <h2>Experiencia</h2>
+            </div>
         </div>
         <div class="chat" id="experienceChat">
             
@@ -39,14 +45,18 @@
 
         <div class="contact" onclick="toggleChat('educationChat')">
             <div class="contact-icon"><i class="fa-solid fa-book"></i></div>
-            <div>Formación</div>
+            <div class="titular" id="formacionItem">
+                <h2>Formación</h2>
+            </div>
         </div>
         <div class="chat" id="educationChat">
            
         </div>
         <div class="contact" onclick="toggleChat('skillsChat')">
             <div class="contact-icon"><i class="fa-solid fa-gear"></i></i></div>
-            <div>Habilidades</div>
+            <div class="titular" id="skillsItem">
+                <h2>Habilidades</h2>
+            </div>
         </div>
         <div class="chat" id="skillsChat">
            
@@ -60,8 +70,11 @@
 <script>
      
 </script>
+<!-- script que define la const cv donde se coloca el json personalizado-->
 <script src="assets/js/datos.js"></script>
+<!-- funciones generales -->
 <script src="assets/js/funciones.js"></script>
+<!-- -->
 <script src="assets/js/contacto.js"></script>
 <script src="assets/js/experiencia.js"></script>
 <script src="assets/js/formacion.js"></script>
