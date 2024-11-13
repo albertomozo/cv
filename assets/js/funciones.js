@@ -53,35 +53,10 @@ function mensaje(tipo, imgsrc, nombre,descripcion,fechaInicial,fechaFin){
 
 }
 
-/* Diccionario de iconos con Simple Icons */
-const obtenerIcono = (nombre) => {
-    // URL para Simple Icons, ajusta el color (opcionalmente) después de 'nombre'
-    const urlIcono = `https://cdn.simpleicons.org/${nombre}/000000`; // color en hexadecimal
-    const iconoPorDefecto = '<i class="fa-solid fa-question-circle"></i>'; // icono de fallback
-    let icon = iconoPorDefecto;
-    console.log('icono  ' + urlIcono);
 
-    // Crea una imagen para verificar si el icono existe
-    const img = new Image();
-    img.src = urlIcono;
-    img.onerror = () => {
-        // Si el icono no existe, muestra el icono por defecto
-        //document.getElementById("icon-container").innerHTML = iconoPorDefecto;
-        icon = iconoPorDefecto;
-    };
-    img.onload = () => {
-        // Si el icono existe, úsalo
-        //document.getElementById("icon-container").innerHTML = 
-        icon = `<img src="${urlIcono}" alt="${nombre} icon">`;
-    };
-
-    
-
-    return icon;
-};
 
 const obtenerIcon = async (nombre) => {
-    const urlIcono = `https://cdn.simpleicons.org/${nombre}/25D366`; // color en hexadecimal
+    const urlIcono = `https://cdn.simpleicons.org/${nombre}/000`; // color en hexadecimal
     const iconoPorDefecto = '<i class="fa-solid fa-question-circle"></i>'; // icono de fallback
     let icon = iconoPorDefecto;
     //const contenedorIcono = document.getElementById("icon-container");

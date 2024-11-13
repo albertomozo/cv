@@ -9,20 +9,29 @@ if (settings.status === 'searchingActively') {
 
 
 
+
 const generarDatosPublicProfiles = async () => {
-    const contenedor = document.createElement('div'); // Contenedor para todos los perfiles públicos
+    const contenedor = document.createElement('div');
     contenedor.className = 'otraInfo';
 
-    for (const pub of settings.contact.publicProfiles) {
-        const iconoHTML = await obtenerIcon(pub.type);
+    for (let pub of datos.relevantLinks) {
+        
+        let iconoBuscar = pub.type.toLowerCase();
+        console.log('iconoBuscar:', iconoBuscar); // Verifica el valor
 
-        // Crear un nuevo elemento <div> para cada perfil
+        let iconoHTML;
+        if (iconoBuscar === 'other') { 
+            console.log("Tipo 'other' encontrado, asignando icono");
+            iconoHTML = `<img src="assets/img/logos/link-svgrepo-com.svg" alt="link icon">`;
+        } else {
+            iconoHTML = await obtenerIcon(iconoBuscar);
+        }
+
         const div = document.createElement('div');
         const link = document.createElement('a');
         link.href = pub.URL;
         link.target = "_blank";
 
-        // Insertar el icono usando createElement y luego añadiéndolo al enlace
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = iconoHTML;
         const iconoElemento = tempDiv.firstChild;
@@ -32,6 +41,7 @@ const generarDatosPublicProfiles = async () => {
         contenedor.appendChild(div);
     }
 
+    console.log(contenedor); // Verifica el contenedor final
     return contenedor;
 };
 
@@ -75,3 +85,9 @@ document.getElementById('personalItem').innerHTML = ficha;
 let imagen = `<img src="${datos.profile.avatar.link}">`;
 
 document.getElementById('personalIcon').innerHTML = imagen;
+
+if (cv.manfredSpecificData.desiredJobDescription != undefined){
+    document.getElementById('desiredChat').innerHTML = cv.manfredSpecificData.desiredJobDescription ;
+} else {
+    document.getElementById('desiredItem').style.display = 'none';
+}
