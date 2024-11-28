@@ -80,3 +80,64 @@ const obtenerIcon = async (nombre) => {
     }
     return icon;
 };
+
+function search() {
+    toggleChat('preguntarChat'); // Asegúrate de que esta función haga visible el contenedor 'preguntarChat'
+    
+    // Generar un ID único basado en el timestamp
+    const timestamp = Date.now();
+    const inputId = `busquedaInput-${timestamp}`;
+    
+    // Crear el input y configurarlo
+    const miInput = document.createElement('input');
+    miInput.type = 'text';
+    miInput.placeholder = '¿Qué quieres preguntar?';
+    miInput.id = inputId;
+
+    // Crear el botón de búsqueda
+    const searchButton = document.createElement('button');
+    searchButton.textContent = 'Buscar';
+
+    // Añadir evento de búsqueda al botón
+    searchButton.addEventListener('click', () => {
+        realizarBusqueda(inputId);
+    });
+
+    // Añadir el input y el botón al contenedor
+    const preguntarChat = document.getElementById('preguntarChat');
+    preguntarChat.innerHTML = ''; // Limpiar contenido previo si es necesario
+    preguntarChat.appendChild(miInput);
+    preguntarChat.appendChild(searchButton);
+}
+
+// Función de búsqueda separada
+function realizarBusqueda(inputId) {
+    const inputElement = document.getElementById(inputId);
+    if (inputElement) {
+        const raw = JSON.stringify({
+            pregunta: inputElement.value
+        });
+
+        const requestOptions = {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: raw,
+            redirect: "follow"
+        };
+
+        fetch("https://albertomozo-cv-buscador.vercel.app/preguntar", requestOptions)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json(); // Asegúrate de que el servidor devuelve JSON
+            })
+            .then((result) => console.log(result))
+            .catch((error) => console.error("Error en la solicitud:", error));
+    } else {
+        console.error("Input no encontrado:", inputId);
+    }
+}
+
+
+    
