@@ -32,10 +32,7 @@ header .barra-tools {
     position: relative;
 }
 
-header .barra-tools:hover {
-    color: #ff0000; /* Cambia a un color de advertencia */
-    animation: shake 0.5s ease-in-out infinite alternate; /* Efecto de sacudida */
-}
+
 
 .barra-tools {
     display:flex;

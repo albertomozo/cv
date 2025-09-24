@@ -11,13 +11,20 @@
 </head>
 <body>
     <div class="container">
+        <!-- caja del buscador -->
+        <div id="buscadorSuperior" style="display:none; position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#fff; border:1px solid #ccc; padding:15px; z-index:1000; box-shadow:0 2px 8px rgba(0,0,0,0.2)">
+            <input type="text" id="inputBuscadorSuperior" placeholder="¿Qué quieres buscar en el CV?" style="width:200px;">
+            <button onclick="buscarDesdeSuperior()">Buscar</button>
+            <button onclick="cerrarBuscadorSuperior()">Cerrar</button>
+            <div id="resultadosBuscadorSuperior" style="margin-top:10px;"></div>
+        </div>
         <header>
             <div class="titulo">
                 <h1>CurrículumVitae</h1>
             </div>
             <div class="barra-tools">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-magnifying-glass"  style="cursor:pointer" onclick="mostrarBuscadorSuperior()"></i>
+                <!-- <i class="fa-solid fa-bars"></i> -->
             </div>
       
         </header>
